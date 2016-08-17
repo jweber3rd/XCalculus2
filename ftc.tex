@@ -1,0 +1,65 @@
+\documentclass{ximera}
+\usepackage{jjw3}
+\usepackage{verbatim}
+
+\title{Fundamental Theorem of Calculus}
+\author{John Weber}
+
+\begin{abstract}
+  Understand the Fundamental Theorem of Calculus.
+\end{abstract}
+
+\begin{document}
+\maketitle
+
+\begin{thm}
+\textbf{Fundamental Theorem of Calculus, Part 1 [FTC-1]}\newline\newline If $f$ is continuous on $\left [a,b\right ]$, then the function $g$ defined by $$g(x)=\int_a^x{f(t)\,dt}, a\leq x\leq b$$ is continuous on $\left [a,b\right ]$ and differentiable on $\left (a,b\right )$, and $g^{\,\prime}(x)=f(x)$.
+\end{thm}
+
+\begin{defn}
+\textbf{Definite Integral as Net Area}\newline\newline A definite integral can be interpreted as a \textbf{net area}, i.e., a difference of areas: $$\int_a^b{f(x)\,dx}=A_1-A_2$$
+where $A_1$ is the area above the $x$-axis and below $f(x)$ and $A_2$ is the area below the $x$-axis and above $f(x)$.
+\end{defn}
+
+\section*{Question 1}
+
+Let $\displaystyle g(x)=\int_{-2}^x{f(t)\,dt}, -2\leq x\leq 4$, where the graph of $f(t)=t-t^2\sin{(t)}$ is shown below:
+
+\[
+\graph[xmin=-3, xmax=5, ymin=-4, ymax=27]{f(x)=\left\{-2\leq x\leq 4 : x - x^2 sin(x)\right\}}
+a=2
+\]
+
+\begin{sageCell}
+@interact
+def _(a=slider([-3..3])):
+	show(plot(a*x^2,(x,-10,10),ymin=-10,ymax=10))
+\end{sageCell}
+
+\begin{example}
+\begin{foldable}
+  FTC1 \unfoldable{something important} something
+unimportant \unfoldable{something really important.}
+\end{foldable}
+\end{example}
+
+\begin{problem}
+Estimate find the area under $f(t)$ between $x=-2$ and $x=-1$, i.e., $\displaystyle g(-1)=\int_{-2}^{-1}{f(t)\,dt}=\answer[tolerance=0.5]{1}$
+\begin{problem}
+Estimate find the area under $f(t)$ between $x=-2$ and $x=0$, i.e., $\displaystyle g(0)=\int_{-2}^{0}{f(t)\,dt}=\answer[tolerance=0.5]{2}$
+\begin{problem}
+Estimate find the area under $f(t)$ between $x=-2$ and $x=1$, i.e., $\displaystyle g(1)=\int_{-2}^{1}{f(t)\,dt}=\answer[tolerance=0.5]{3}$
+\begin{problem}
+Evaluate $\displaystyle g(2) = \answer[tolerance=0.5]{4}$
+\begin{problem}
+Evaluate $\displaystyle g(3) = \answer[tolerance=0.5]{5}$
+\begin{problem}
+Evaluate $\displaystyle g(4) = \answer[tolerance=0.5]{6}$
+\end{problem}
+\end{problem}
+\end{problem}
+\end{problem}
+\end{problem}
+\end{problem}
+
+\end{document}
